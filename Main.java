@@ -48,10 +48,33 @@ public class Main {
     }
 
     // TODO: diplayMenu method (b)
-
-    // TODO: minList (c)
-
-    // TODO: maxList (c)
+    //returns min value of the array
+    public static int minList(int[] list)
+    {
+        int min=Integer.MAX_VALUE;
+        for(int i=0;i<list.length;i++)
+        {
+            if(list[i]<min)
+            {
+                min=list[i];
+            }
+        }
+        return min;
+    }
+    //returns max value of the array
+     public static int maxList(int[] list)
+     {
+        int max=Integer.MIN_VALUE;
+        for(int i=0;i<list.length;i++)
+        {
+            if(list[i]>max)
+            {
+                max=list[i];
+            }
+        }
+        return max;
+     }
+    
 
     public static void averageList (int[] list){ 
         //variables
