@@ -7,3 +7,4 @@ Berkin İlkan Seçkin
 Onur Arda Özçimen
 Berke Özkan
 Samet Talha Zorlu
+Göktan Arslan
