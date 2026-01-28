@@ -1,6 +1,10 @@
-# CS102_HW1_TEAMWORK
+# CS102\_HW1\_TEAMWORK
+
 Hello World
 
-Authors: 
+Authors:
 Berkin İlkan Seçkin
 Onur Arda Özçimen
+
+Berke Özkan
+
