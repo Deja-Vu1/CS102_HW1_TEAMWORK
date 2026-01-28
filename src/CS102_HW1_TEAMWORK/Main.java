@@ -25,6 +25,7 @@ public class Main {
         
         while (menuStop == false){
             displayMenu();
+            System.out.print("Select: ");
             menuSelection =getValidInput(input);
             switch (menuSelection) {
                 case 1:
@@ -106,6 +107,7 @@ public class Main {
                          "(4) -Sums of Odd and Even Indexes- \n"+
                          "(5) -Exit Program-"
                         );
+        System.out.printf("%n");
 
     }
     //message to notify of invalid inputs.
