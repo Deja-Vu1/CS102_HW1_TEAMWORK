@@ -53,7 +53,24 @@ public class Main {
 
     // TODO: maxList (c)
 
-    // TODO: averageList (d)
+    public static void averageList (ArrayList<Integer> list){
+        //variables
+        double average = 0;
+        int sum = 0;
+
+        //calculate the sum of the elemnts in array list
+        for(int i = 0; i < list.size(); i++){
+            sum += list.get(i);
+        }
+        //calculate the average
+        average = (double) sum / list.size();
+
+        //print the difference
+        for(int i = 0; i < list.size(); i++){
+            System.out.printf("%.2f ", (list.get(i) - average));
+        }
+
+    }
 
     // TODO: sumList (e)
 }
