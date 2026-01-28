@@ -5,6 +5,5 @@ Hello World
 Authors:
 Berkin İlkan Seçkin
 Onur Arda Özçimen
-
 Berke Özkan
-
+Samet Talha Zorlu
