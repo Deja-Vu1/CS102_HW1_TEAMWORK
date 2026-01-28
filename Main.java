@@ -1,12 +1,11 @@
 package CS102_HW1_TEAMWORK;
-import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
 
     // Initial variables
-    public static ArrayList<Integer> randNumbers = new ArrayList<Integer>();
+    public static int[] randNumbers; 
     private static Random random = new Random();
     private static Scanner input = new Scanner(System.in);
     private static int capacity;
@@ -29,20 +28,21 @@ public class Main {
 
     // Creates a list for the user
     public static void createList(){
+        randNumbers = new int[capacity]; 
         for(int i=0; i<capacity; i++){
-            randNumbers.add(random.nextInt(100));
+            randNumbers[i] = random.nextInt(100); 
         }
     }
 
     // Prints the list formatted as you wish
-    public static void printList(ArrayList<Integer> list){
+    public static void printList(int[] list){ 
         
-        for (int i=0; i<list.size(); i++){
+        for (int i=0; i<list.length; i++){ 
             System.out.printf("%-3d|", i+1);
         }
         System.out.printf("%n");
-        for (int i=0; i<list.size(); i++){
-            System.out.printf("%-3d|", list.get(i));
+        for (int i=0; i<list.length; i++){
+            System.out.printf("%-3d|", list[i]); 
         }
         System.out.printf("%n");
     }
@@ -53,24 +53,26 @@ public class Main {
 
     // TODO: maxList (c)
 
-    public static void averageList (ArrayList<Integer> list){
+    public static void averageList (int[] list){ 
         //variables
         double average = 0;
         int sum = 0;
 
         //calculate the sum of the elemnts in array list
-        for(int i = 0; i < list.size(); i++){
-            sum += list.get(i);
+        for(int i = 0; i < list.length; i++){ 
+            sum += list[i]; 
         }
         //calculate the average
-        average = (double) sum / list.size();
+        average = (double) sum / list.length; 
 
         //print the difference
-        for(int i = 0; i < list.size(); i++){
-            System.out.printf("%.2f ", (list.get(i) - average));
+        for(int i = 0; i < list.length; i++){
+            System.out.printf("%.2f ", (list[i] - average)); 
         }
 
     }
 
     // TODO: sumList (e)
+
+    
 }
