@@ -95,7 +95,22 @@ public class Main {
 
     }
 
-    // TODO: sumList (e)
+    //  sumList (e)
+    public static void sumList (int [] list){
+        int sumOfEven=0;
+        int sumOfOdd=0;
+        int currentNumber=0;
+        for(int i=0; i< list.length; i++){
+            currentNumber=list[i];
+            if(i%2==0){
+            sumOfEven+=currentNumber;
+            }
+            else{
+                sumOfOdd+=currentNumber;
+            }
+        }
+        System.out.println("sum of elements with odd-numbered indexes: "+ sumOfOdd+ "even-numbered indexes: "+sumOfEven);
+    }
 
     
 }
