@@ -16,8 +16,9 @@ public class Main {
     public static void main(String[] args) {
 
         System.out.print("Please enter the capacity of the list: ");
-        capacity = input.nextInt();
+        capacity = getValidInput(true, 1, Integer.MAX_VALUE);
         createList();
+        
         printList(randNumbers); // Use only if you want to take a look at the list
         // Also you can use this method to display every lists program have
         
@@ -26,7 +27,7 @@ public class Main {
         while (menuStop == false){
             displayMenu();
             System.out.print("Select: ");
-            menuSelection =getValidInput(input);
+            menuSelection =getValidInput(true, 1, 5);
             switch (menuSelection) {
                 case 1:
                     System.out.println("\n  -"+minList(randNumbers)+ "-");
@@ -78,21 +79,21 @@ public class Main {
     }
 
     //Gets valid input from user.
-    public static int getValidInput(Scanner scanner){
+    public static int getValidInput(boolean hasLimit, int minLimit, int maxLimit){
         int selection;
 
         while (true) {
-            if (scanner.hasNextInt()) {
-                selection = scanner.nextInt();
+            if (input.hasNextInt()) {
+                selection = input.nextInt();
 
-                if (selection >= 1 && selection <= 5) {
+                if (!hasLimit || (selection >= minLimit && selection <= maxLimit)) {
                     return selection;
                 }else{
                     errMessage();
                 }
             }else{
                 errMessage();
-                scanner.next();
+                input.next();
             }
         }
 
@@ -112,7 +113,7 @@ public class Main {
     }
     //message to notify of invalid inputs.
     public static void errMessage(){
-        System.out.print("Invalid input, try again:");
+        System.out.print("Invalid input, try again: ");
     }
 
     //returns min value of the array
