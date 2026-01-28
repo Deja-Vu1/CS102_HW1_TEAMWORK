@@ -9,6 +9,8 @@ public class Main {
     private static Random random = new Random();
     private static Scanner input = new Scanner(System.in);
     private static int capacity;
+    private static int menuSelection;
+    private static boolean menuStop = false;
 
     // Main function managing the project
     public static void main(String[] args) {
@@ -19,12 +21,39 @@ public class Main {
         printList(randNumbers); // Use only if you want to take a look at the list
         // Also you can use this method to display every lists program have
         
-        // TODO: Here must be for loop that shows menu options 
-        // (maybe creating new method and call it in here)
+       
+        
+        while (menuStop == false){
+            displayMenu();
+            menuSelection =getValidInput(input);
+            switch (menuSelection) {
+                case 1:
+                    System.out.println("\n  -"+minList(randNumbers)+ "-");
 
-        // Do not forget to close input at the end
+                    break;
+                case 2:
+                    System.out.println("\n  -"+maxList(randNumbers)+ "-");
+                    break;
+                case 3:
+                    System.out.println("");
+                    averageList(randNumbers);
+                    System.out.println("");
+                    break;
+                case 4:
+                    System.out.println("");
+                    sumList(randNumbers);
+                    break;
+                case 5:
+                    menuStop=true;
+                    break;    
+            
+                default:
+                    break;
+            }
+        }  
         input.close();
     }
+
 
     // Creates a list for the user
     public static void createList(){
@@ -47,7 +76,43 @@ public class Main {
         System.out.printf("%n");
     }
 
-    // TODO: diplayMenu method (b)
+    //Gets valid input from user.
+    public static int getValidInput(Scanner scanner){
+        int selection;
+
+        while (true) {
+            if (scanner.hasNextInt()) {
+                selection = scanner.nextInt();
+
+                if (selection >= 1 && selection <= 5) {
+                    return selection;
+                }else{
+                    errMessage();
+                }
+            }else{
+                errMessage();
+                scanner.next();
+            }
+        }
+
+    }
+
+
+    public static void displayMenu(){
+        System.out.print("\n==== List Manager ==== \n" +
+                         "(1) -Find Minimum- \n"+
+                         "(2) -Find Maximum- \n"+
+                         "(3) -Find Difference to Average- \n"+
+                         "(4) -Sums of Odd and Even Indexes- \n"+
+                         "(5) -Exit Program-"
+                        );
+
+    }
+    //message to notify of invalid inputs.
+    public static void errMessage(){
+        System.out.print("Invalid input, try again:");
+    }
+
     //returns min value of the array
     public static int minList(int[] list)
     {
@@ -109,7 +174,7 @@ public class Main {
                 sumOfOdd+=currentNumber;
             }
         }
-        System.out.println("sum of elements with odd-numbered indexes: "+ sumOfOdd+ "even-numbered indexes: "+sumOfEven);
+        System.out.println("sum of elements with odd-numbered indexes: "+ sumOfOdd+ "| even-numbered indexes: "+sumOfEven);
     }
 
     
