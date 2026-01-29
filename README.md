@@ -2,9 +2,9 @@
 
 Hello World
 
-Authors:
-Berkin İlkan Seçkin
-Onur Arda Özçimen
-Berke Özkan
-Samet Talha Zorlu
+Authors:<br/><br/>
+Berkin İlkan Seçkin<br/>
+Onur Arda Özçimen<br/>
+Berke Özkan<br/>
+Samet Talha Zorlu<br/>
 Göktan Arslan
